@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+	<context id="mysqlTables" targetRuntime="MyBatis3">
+		<plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
+		
+		<plugin type="plugins.MysqlPaginationPlugin" />
+		<commentGenerator>
+			<property name="suppressAllComments" value="true" /></commentGenerator>
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://127.0.0.1:3306/springbootdubbo" userId="root" password="123456"></jdbcConnection>
+
+		<!-- 指定生成的类型为java类型，避免数据库中number等类型字段 -->
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+		<!-- 生成model模型，对应的包，存放位置可以指定具体的路径,如/ProjectName/src，也可以使用MAVEN来自动生成 -->
+		<javaModelGenerator targetPackage="com.springboot.base.entity"
+			targetProject="../springboot-base/src/main/java">
+			<property name="enableSubPackages" value="false" />
+			<property name="trimStrings" value="true" />
+
+		</javaModelGenerator>
+
+		<!--对应的xml dao文件 -->
+		<sqlMapGenerator targetPackage="com.springboot.dao"
+			targetProject="./src/main/java">
+			<property name="enableSubPackages" value="false" />
+		</sqlMapGenerator>
+
+		<!-- 对应的dao接口 -->
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="com.springboot.dao" targetProject="./src/main/java">
+			<property name="enableSubPackages" value="false" />
+
+		</javaClientGenerator>
+	<table schema="springbootdubbo"  tableName="T_USER" domainObjectName="User" 
+			enableSelectByExample="false" enableCountByExample="false"
+			enableUpdateByExample="false" enableDeleteByExample="false" >
+ 	        <!-- <generatedKey column="id" sqlStatement="mysql" identity="true"/> -->
+	</table>
+
+	</context>
+</generatorConfiguration>
