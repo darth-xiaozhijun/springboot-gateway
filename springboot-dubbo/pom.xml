@@ -11,6 +11,7 @@
   	<module>springboot-base</module>
   	<module>springboot-common</module>
   	<module>springboot-task</module>
+  	<module>springboot-mq</module>
   </modules>
   
   	<parent>

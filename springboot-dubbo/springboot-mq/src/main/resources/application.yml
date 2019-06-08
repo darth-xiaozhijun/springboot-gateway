@@ -1,0 +1,24 @@
+dubbo:
+  application:
+    name:  springboot-mq
+  registry:
+    address: localhost:2181
+    # 读者请换成自己的zookeeperip
+    protocol: zookeeper
+    check: false
+  monitor:
+    protocol: register
+  consumer:
+    check:  false
+    timeout: 3000
+    
+spring:
+   rabbitmq:
+      host: localhost
+      port: 5672
+      username: guest
+      password: guest
+
+server:
+  port: 8064
+
