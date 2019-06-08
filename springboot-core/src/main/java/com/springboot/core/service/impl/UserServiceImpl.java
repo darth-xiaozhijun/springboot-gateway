@@ -44,8 +44,8 @@ public class UserServiceImpl implements IUserService{
 			
 			//查询数据库是否有值
 			User userDO = userMapper.selectOne(user);
-			LOG.info("增加用户","查询数据库","请求参数：user:{},返回参数：userDO:{}",new Object[]{JSON.toJSONString(user),JSON.toJSONString(userDO)});
-			
+			LOG.info("增加用户,查询数据库,请求参数：user:{},返回参数：userDO:{}", 
+					new Object[]{JSON.toJSONString(user),JSON.toJSONString(userDO)});
 			if(userDO == null){
 				
 				//插入数据库
@@ -78,7 +78,7 @@ public class UserServiceImpl implements IUserService{
 	@Override
 	public String addRedisCache(User user) {
 		
-		LOG.info("新增用户信息到缓存","开始请求","请求参数：user:{}",JSON.toJSONString(user));
+		LOG.info("新增用户信息到缓存,开始请求,请求参数：user:{}",JSON.toJSONString(user));
 		
 		String resultDesc = "失败";
 		
@@ -89,7 +89,7 @@ public class UserServiceImpl implements IUserService{
 			
 		} catch (Exception e) {
 			
-			LOG.info("新增用户信息到缓存","程序运行中抛出异常","请求参数：user:{}",new Object[]{JSON.toJSONString(user)});
+			LOG.info("新增用户信息到缓存,程序运行中抛出异常,请求参数：user:{}",new Object[]{JSON.toJSONString(user)});
 			e.printStackTrace();
 		}
 		
