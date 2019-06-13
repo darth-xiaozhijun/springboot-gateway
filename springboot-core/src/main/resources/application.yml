@@ -6,6 +6,11 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/springbootdubbo?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true
     username: root
     password: 123456
+  mail:
+    host: smtp.163.com
+    port: 25
+    username: 15717061273@163.com
+    password: 19951022xzjaj
     
 jedis:
   pool:
@@ -15,7 +20,7 @@ jedis:
       maxTotal: 100
       maxIdle: 10
       maxWaitMillis: 100000
-
+      
 dubbo:
   application:
     name: springboot-web
