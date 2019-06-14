@@ -9,8 +9,8 @@ spring:
   mail:
     host: smtp.163.com
     port: 25
-    username: 15717061273@163.com
-    password: 19951022xzjaj
+    username: 157****1273@163.com
+    password: 123456
     
 jedis:
   pool:

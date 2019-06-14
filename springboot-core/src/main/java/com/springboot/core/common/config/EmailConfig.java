@@ -14,7 +14,7 @@ public class EmailConfig {
     private String host;
     private Integer port;
     private String username;
-//    private String password;
+    private String password;
 
     @Bean
     public MailSender javaMailSender() {
@@ -22,7 +22,7 @@ public class EmailConfig {
         javaMailSender.setHost(host);
         javaMailSender.setPort(port);
         javaMailSender.setUsername(username);
-//        javaMailSender.setPassword(password);
+        javaMailSender.setPassword(password);
         return javaMailSender;
     }
 
@@ -35,7 +35,7 @@ public class EmailConfig {
     public void setUsername(String username) {
         this.username = username;
     }
-//    public void setPassword(String password) {
-//        this.password = password;
-//    }
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }
